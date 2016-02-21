@@ -1371,8 +1371,24 @@ void draw() {
 }
 
 // event handling
-void keyPressed()    { activeScreen.keyPressed(key, keyCode); }
-void keyReleased()   { activeScreen.keyReleased(key, keyCode); }
+void keyPressed()    {
+  // cheat?
+  if (keyCode == 74) { // press j
+    // simulate pressing a
+    activeScreen.keyPressed('a', 65);
+  } else {
+    activeScreen.keyPressed(key, keyCode);
+  }  
+}
+void keyReleased()   {
+  // cheat?
+  if (keyCode == 74) { // press j
+    // simulate pressing a
+    activeScreen.keyReleased('a', 65);
+  } else {
+    activeScreen.keyReleased(key, keyCode);
+  }
+}
 void mouseMoved()    { activeScreen.mouseMoved(mouseX, mouseY); }
 void mousePressed()  { SoundManager.clicked(mouseX,mouseY); activeScreen.mousePressed(mouseX, mouseY, mouseButton); }
 void mouseDragged()  { activeScreen.mouseDragged(mouseX, mouseY, mouseButton); }
