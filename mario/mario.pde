@@ -13,6 +13,16 @@ float DOWN_FORCE = 2;
 float ACCELERATION = 1.3;
 float DAMPENING = 0.75;
 
+void setup() {
+  size(512, 432);
+  noLoop();
+
+  screenSet = new HashMap<String, Screen>();
+  SpriteMapHandler.init(this);
+  SoundManager.init(this);
+  CollisionDetection.init(this);
+  initialize();
+}
 
 /**
  * initializing means building an "empty"
@@ -33,4 +43,3 @@ void reset() {
   if(javascript != null) { javascript.reset(); }
   setActiveScreen("Main Level");
 }
-

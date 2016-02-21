@@ -1364,20 +1364,6 @@ HashMap<String, Screen> screenSet;
 // global 'currently active' screen
 Screen activeScreen = null;
 
-// setup sets up the screen size, and screen container,
-// then calls the "initialize" method, which you must
-// implement yourself.
-void setup() {
-  size(screenWidth, screenHeight);
-  noLoop();
-
-  screenSet = new HashMap<String, Screen>();
-  SpriteMapHandler.init(this);
-  SoundManager.init(this);
-  CollisionDetection.init(this);
-  initialize();
-}
-
 // draw loop
 void draw() { 
   activeScreen.draw(); 
