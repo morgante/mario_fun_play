@@ -1370,6 +1370,9 @@ void draw() {
   SoundManager.draw();
 }
 
+int lastX = null;
+int lastY = null;
+
 // event handling
 void keyPressed()    {
   // cheat?
@@ -1379,6 +1382,7 @@ void keyPressed()    {
   } else {
     activeScreen.keyPressed(key, keyCode);
   }  
+  println("key", key, keyCode);
 }
 void keyReleased()   {
   // cheat?
@@ -1389,6 +1393,7 @@ void keyReleased()   {
     activeScreen.keyReleased(key, keyCode);
   }
 }
+
 void mouseMoved()    { activeScreen.mouseMoved(mouseX, mouseY); }
 void mousePressed()  { SoundManager.clicked(mouseX,mouseY); activeScreen.mousePressed(mouseX, mouseY, mouseButton); }
 void mouseDragged()  { activeScreen.mouseDragged(mouseX, mouseY, mouseButton); }
